@@ -12,8 +12,8 @@ class TransactionScriptPy(unittest.TestCase):
         sel = self.selenium
         sel.open("https://webcorp.tww.com.br/energisa/EACSACTK")
         sel.click("//*[@id=\"lgusuario\"]")
-        sel.type("//*[@id=\"lgusuario\"], psouto", "")
-        sel.type("//*[@id=\"lgsenha\"], M*02052018h", "")
+        sel.type("//*[@id=\"lgusuario\"], ", "")
+        sel.type("//*[@id=\"lgsenha\"], ", "")
         sel.click("//*[@id=\"lbtn\" or @class=\"ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus\"]")
         sel.click("//*[@id=\"main\"]/table/tbody/tr/td[2]/div/div[2]/div")
         sel.click("//*[@id=\"main\"]/div/button/span")

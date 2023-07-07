@@ -50,7 +50,7 @@
                                 
            <tr>
                <td data-target="5" class="cp-selenium">type</td>
-               <td data-value="5" class="cp-selenium">//*[@id="lgusuario"], psouto</td>
+               <td data-value="5" class="cp-selenium">//*[@id="lgusuario"], </td>
                <td></td>
            </tr>
 
@@ -58,7 +58,7 @@
                                 
            <tr>
                <td data-target="6" class="cp-selenium">type</td>
-               <td data-value="6" class="cp-selenium">//*[@id="lgsenha"], M*02052018h</td>
+               <td data-value="6" class="cp-selenium">//*[@id="lgsenha"], </td>
                <td></td>
            </tr>
 

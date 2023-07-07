@@ -13,10 +13,10 @@ import glob
 
 # Variáveis
 empresas = "EAC" # EBO, EMG, EMS, EMT, ENF, EPB, ERO, ESE, ESS, ETO]
-login = "psouto"
-senha = "M*02052018h"
+login = input("Digita o login: ")
+senha = input("Digita a senha: ")
 url = "https://webcorp.tww.com.br/energisa/" + empresas +"SACTK"
-caminho_exportacao = r"C:\Users\paulo\OneDrive\Área de Trabalho\DIEC\scripts\arquivos"
+caminho_exportacao = r"C:\Users\paulo\OneDrive\Área de Trabalho\DIEC\extracao_de_bases SMS\arquivos"
 data_inicial = "01.06.2023"
 data_final = "30.06.2023"
 arquivo_exportado_padrao = caminho_exportacao + r"\mens-*.csv"
@@ -44,9 +44,7 @@ class TransactionScriptPy(unittest.TestCase):
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(30)
         self.base_url = url
-        self.verificationErrors = []
-        self.accept_next_alert = True
-
+        
     def test_transaction_script_py(self):
         self.driver.get(url)
         self.driver.find_element(By.XPATH, "//*[@id=\"lgusuario\"]").click()
@@ -95,31 +93,9 @@ class TransactionScriptPy(unittest.TestCase):
         # Continuar com as etapas restantes do teste       
         
         self.driver.find_element(By.XPATH, "//*[@id=\"usercont2\"]/a[4]/div").click() 
-            
-    def is_element_present(self, how, what):
-        try: self.driver.find_element(by=how, value=what)
-        except NoSuchElementException as e: return False
-        return True
-    
-    def is_alert_present(self):
-        try: self.driver.switch_to_alert()
-        except NoAlertPresentException as e: return False
-        return True
-    
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally: self.accept_next_alert = True
     
     def tearDown(self):
         self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
-
+    
 if __name__ == "__main__":
     unittest.main()
