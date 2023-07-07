@@ -1,0 +1,174 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://github.com/" />
+<title>transactionScript.html</title>
+</head>
+<body>
+    <table cellpadding="1" cellspacing="1" border="1">
+        <thead>
+            <tr><td rowspan="1" colspan="3"> transactionScript.html </td></tr>
+        </thead>
+        <tbody>            
+                                <!--// Step-1-->
+                            
+                                
+           <tr>
+               <td data-target="1" class="cp-selenium">open</td>
+               <td data-value="1" class="cp-selenium">https://webcorp.tww.com.br/energisa/EACSACTK</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="2" class="cp-selenium">setStepName</td>
+               <td data-value="2" class="cp-selenium">Step1-Webcorp</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="3" class="cp-selenium">waitForUrl</td>
+               <td data-value="3" class="cp-selenium">https:\/\/webcorp\.tww\.com\.br\/energisa\/EACSACTK, 3000</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="4" class="cp-selenium">click</td>
+               <td data-value="4" class="cp-selenium">//*[@id="lgusuario"]</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="5" class="cp-selenium">type</td>
+               <td data-value="5" class="cp-selenium">//*[@id="lgusuario"], psouto</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="6" class="cp-selenium">type</td>
+               <td data-value="6" class="cp-selenium">//*[@id="lgsenha"], M*02052018h</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="7" class="cp-selenium">click</td>
+               <td data-value="7" class="cp-selenium">//*[@id="lbtn" or @class="ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus"]</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="8" class="cp-selenium">click</td>
+               <td data-value="8" class="cp-selenium">//*[text()="Relatório completo ☆"]</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="9" class="cp-selenium">click</td>
+               <td data-value="9" class="cp-selenium">//*[@id="main"]/div/button/span</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="10" class="cp-selenium">click</td>
+               <td data-value="10" class="cp-selenium">//*[@id="data1"]</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="11" class="cp-selenium">type</td>
+               <td data-value="11" class="cp-selenium">//*[@id="data1"], 01/06/2023</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="12" class="cp-selenium">type</td>
+               <td data-value="12" class="cp-selenium">//*[@id="hora1"], 00:00</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="13" class="cp-selenium">type</td>
+               <td data-value="13" class="cp-selenium">//*[@id="data2"], 30/06/2023</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="14" class="cp-selenium">type</td>
+               <td data-value="14" class="cp-selenium">//*[@id="hora2"], 23:59</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="15" class="cp-selenium">click</td>
+               <td data-value="15" class="cp-selenium">//*[@id="exportar-button"]/span[2]</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="16" class="cp-selenium">click</td>
+               <td data-value="16" class="cp-selenium">//*[@id="ui-id-15" or text()="Exportar: CSV"]</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="17" class="cp-selenium">click</td>
+               <td data-value="17" class="cp-selenium">//*[text()="Gerar"]</td>
+               <td></td>
+           </tr>
+
+                            
+                                <!--// Step-2-->
+                            
+                                
+           <tr>
+               <td data-target="19" class="cp-selenium">clickAndWait</td>
+               <td data-value="19" class="cp-selenium">//*[@id="usercont2"]/a[4]/div</td>
+               <td></td>
+           </tr>
+
+                            
+                                
+           <tr>
+               <td data-target="20" class="cp-selenium">setStepName</td>
+               <td data-value="20" class="cp-selenium">Step2-Webcorp</td>
+               <td></td>
+           </tr>
+
+                                    </tbody>
+    </table>
+</body>
+</html>
