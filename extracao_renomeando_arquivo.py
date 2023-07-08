@@ -3,12 +3,12 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
+#from selenium.webdriver.common.keys import Keys
+#from selenium.webdriver.support.ui import Select
+#from selenium.common.exceptions import NoSuchElementException
+#from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
-import time
+#import time
 import glob
 
 # Variáveis
@@ -17,8 +17,8 @@ login = input("Digita o login: ")
 senha = input("Digita a senha: ")
 url = "https://webcorp.tww.com.br/energisa/" + empresas +"SACTK"
 caminho_exportacao = r"C:\Users\paulo\OneDrive\Área de Trabalho\DIEC\extracao_de_bases SMS\arquivos"
-data_inicial = "01.06.2023"
-data_final = "30.06.2023"
+data_inicial = input("Digite a data inicial (formato dd.mm.aaaa): ")
+data_final = input("Digite a data final (formato dd.mm.aaaa): ")
 arquivo_exportado_padrao = caminho_exportacao + r"\mens-*.csv"
 arquivo_encontrado = ""
 arquivo_renomeado = empresas + "-" + data_inicial + " a " + data_final + ".csv"
