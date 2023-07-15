@@ -35,7 +35,7 @@ def realizar_extracao(url, caminho_exportacao, login, senha, data_inicial, data_
 
     try:
         # Navegar para a URL
-        driver.get(url)
+        driver.get(base_url)
 
         # Preencher informações de login
         driver.find_element(By.XPATH, "//*[@id=\"lgusuario\"]").click()
@@ -45,22 +45,23 @@ def realizar_extracao(url, caminho_exportacao, login, senha, data_inicial, data_
         driver.find_element(By.XPATH, "//*[@id=\"lgsenha\"]").clear()
         time.sleep(1)
         driver.find_element(By.XPATH, "//*[@id=\"lgsenha\"]").send_keys(senha)
-        time.sleep(3)
-        driver.find_element(By.XPATH, "//*[@id=\"lbtn\" or @class=\"ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus\"]").click()
+        time.sleep(1)
+        driver.find_element(By.XPATH, "//*[@id=\"lbtn\" or @class=\"ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus\"]").click() # Fazendo Login
 
         # Navegar para a página de exportação
-        time.sleep(1)
+        time.sleep(3)
         elemento_1 = False
         while not elemento_1:
             try:
                 print("Elemento_1")
-                driver.find_element(By.XPATH, "//*[@id=\"main\"]/table/tbody/tr/td[2]/div/div[2]/div").click()
+                driver.find_element(By.XPATH, "//*[@id=\"main\"]/table/tbody/tr/td[2]/div/div[2]/div").click()  # Relatório Completo
                 elemento_1 = True
+                print(elemento_1)
             except:
                 driver = webdriver.Chrome(options=chrome_options)
                 driver.implicitly_wait(10)
                 base_url = url
-                driver.get(url)
+                driver.get(base_url)
                 driver.find_element(By.XPATH, "//*[@id=\"lgusuario\"]").click()
                 driver.find_element(By.XPATH, "//*[@id=\"lgusuario\"]").clear()
                 time.sleep(1)
@@ -76,7 +77,7 @@ def realizar_extracao(url, caminho_exportacao, login, senha, data_inicial, data_
         while not elemento_2:
             try:
                 print("Elemento_2")
-                driver.find_element(By.XPATH, '//*[@id="main"]/div/button/span').click() # Relatório
+                driver.find_element(By.XPATH, '//*[@id="main"]/div/button/span').click() # Data
                 elemento_2 = True
             except:
                 driver = webdriver.Chrome(options=chrome_options)
@@ -94,30 +95,31 @@ def realizar_extracao(url, caminho_exportacao, login, senha, data_inicial, data_
                 driver.find_element(By.XPATH, '//*[@id="lbtn" or @class="ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus"]').click() # Login
                 time.sleep(5)
 
-            elemento_3 = False
-            while not elemento_3:
-                try:
-                    print("Elemento_3")
-                    driver.find_element(By.XPATH, '//*[@id="main"]/table/tbody/tr/td[2]/div/div[2]/div').click()
-                    elemento_3 =True
-                except:
-                    driver = webdriver.Chrome(options=chrome_options)
-                    driver.implicitly_wait(10)
-                    base_url = url
-                    driver.get(url)
-                    driver.find_element(By.XPATH, '//*[@id="lgusuario"]').click()
-                    driver.find_element(By.XPATH, '//*[@id="lgusuario"]').clear()
-                    time.sleep(1)
-                    driver.find_element(By.XPATH, '//*[@id="lgusuario"]').send_keys(login)
-                    driver.find_element(By.XPATH, '//*[@id="lgsenha"]').clear()
-                    time.sleep(1)
-                    driver.find_element(By.XPATH, '//*[@id="lgsenha"]').send_keys(senha)
-                    time.sleep(3)
-                    driver.find_element(By.XPATH, '//*[@id="lbtn" or @class="ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus"]').click()
-                    time.sleep(1)
-                    
-        time.sleep(1)
-        driver.find_element(By.XPATH, "//*[@id=\"main\"]/div/button/span").click()  # //*[@id="usercont2"]/a[4]/div
+                elemento_3 = False
+                while not elemento_3:
+                    try:
+                        print("Elemento_3")
+                        time.sleep(3)
+                        driver.find_element(By.XPATH, '//*[@id="main"]/table/tbody/tr/td[2]/div/div[2]/div').click() # Relatório Completo
+                        elemento_3 =True
+                    except:
+                        driver = webdriver.Chrome(options=chrome_options)
+                        driver.implicitly_wait(10)
+                        base_url = url
+                        driver.get(url)
+                        driver.find_element(By.XPATH, '//*[@id="lgusuario"]').click()
+                        driver.find_element(By.XPATH, '//*[@id="lgusuario"]').clear()
+                        time.sleep(1)
+                        driver.find_element(By.XPATH, '//*[@id="lgusuario"]').send_keys(login)
+                        driver.find_element(By.XPATH, '//*[@id="lgsenha"]').clear()
+                        time.sleep(1)
+                        driver.find_element(By.XPATH, '//*[@id="lgsenha"]').send_keys(senha)
+                        time.sleep(3)
+                        driver.find_element(By.XPATH, '//*[@id="lbtn" or @class="ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-state-focus"]').click()  # Login
+                        time.sleep(1)
+                        
+        #time.sleep(1)
+        #driver.find_element(By.XPATH, "//*[@id=\"main\"]/div/button/span").click()  # Data
 
         # Preencher datas de filtro
         driver.find_element(By.XPATH, "//*[@id=\"data1\"]").click()
@@ -141,7 +143,7 @@ def realizar_extracao(url, caminho_exportacao, login, senha, data_inicial, data_
         driver.find_element(By.XPATH, "//*[@id=\"main\"]/div[5]/button/span").click()
         time.sleep(5)
         driver.find_element(By.XPATH, "//*[@id=\"usercont2\"]/a[4]/div").click()
-        time.sleep(3)
+        time.sleep(60)
 
 
         # Esperar o download ser concluído (aguardar até 20 segundos)

@@ -74,7 +74,7 @@ def realizar_extracao_SACTK(url, caminho_exportacao, login, senha, data_inicial,
         driver.find_element(By.XPATH, "//*[@id='ui-id-3']").click()
         time.sleep(1)
         driver.find_element(By.XPATH, "//*[@id='main']/div[5]/button/span").click()
-        time.sleep(15)
+        time.sleep(5)
 
         # Esperar o download ser concluído
         caminho_download = caminho_exportacao
@@ -87,8 +87,16 @@ def realizar_extracao_SACTK(url, caminho_exportacao, login, senha, data_inicial,
                 caminho_arquivo = os.path.join(caminho_download, nome_arquivo)
 
                 # Usar pySmartDL para monitorar o progresso do download
-                obj = pySmartDL.SmartDL(url, dest=caminho_arquivo)
+                obj = pySmartDL.SmartDL(url, dest=caminho_download)
                 obj.start(blocking=False)
+                print(obj)
+
+                #obj = arquivo_exportado_padrao
+                #obj = nome_arquivo
+                #obj.start(blocking=False)
+                #print(obj)
+
+
 
                 # Aguardar até que o download seja concluído
                 while not obj.isFinished():
