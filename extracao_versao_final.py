@@ -381,10 +381,10 @@ def excluir_arquivos_nao_csv(caminho_exportacao):
 # Abrir caixa de diálogo para o usuário escolher o diretório de exportação
 root = tk.Tk()
 root.withdraw()
-caminho_exportacao = filedialog.askdirectory().replace("/", "\\")
+caminho_exportacao = filedialog.askdirectory().replace("/", "\\") + "\\arquivos"
 
 # Variáveis globais
-empresas = ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"] # ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"]
+empresas = ["EAC"] #, "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"] # ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"]
 login = input("Digite o login: ")
 senha = pwinput.pwinput(prompt='Digite sua senha: ')
 data_inicial = input("Digite a data inicial (formato dd.mm.aaaa): ")
