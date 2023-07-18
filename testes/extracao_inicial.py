@@ -107,10 +107,10 @@ caminho_exportacao = filedialog.askdirectory().replace("/", "\\")
 
 # Variáveis globais
 empresas = ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"] # ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"]
-login = "psouto" #input("Digite o login: ")
-senha = "M*02052018h" # pwinput.pwinput(prompt='Digite sua senha: ')
-data_inicial = "01.06.2023" #input("Digite a data inicial (formato dd.mm.aaaa): ")
-data_final = "30.06.2023" #input("Digite a data final (formato dd.mm.aaaa): ")
+login = input("Digite o login: ")
+senha = pwinput.pwinput(prompt='Digite sua senha: ')
+data_inicial = input("Digite a data inicial (formato dd.mm.aaaa): ")
+data_final = input("Digite a data final (formato dd.mm.aaaa): ")
 
 for empresa in empresas:
     url = "https://webcorp.tww.com.br/energisa/" + empresa + "SACTK"
