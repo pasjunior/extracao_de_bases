@@ -3,7 +3,7 @@
 # pip install selenium
 # pip install pySmartDL
 # pip install pwinput
-# pip install pyinstaller
+# pip install auto-py-to-exe
 # -*- coding: utf-8 -*-
 
 import os
@@ -384,11 +384,11 @@ root.withdraw()
 caminho_exportacao = filedialog.askdirectory().replace("/", "\\")
 
 # Variáveis globais
-empresas = ["EAC"] # ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"]
-login = input("Digite o login: ") #"psouto"
-senha = pwinput.pwinput(prompt='Digite sua senha: ') #"M*02052018h"
-data_inicial = input("Digite a data inicial (formato dd.mm.aaaa): ") #"01.06.2023"
-data_final = input("Digite a data final (formato dd.mm.aaaa): ") #"30.06.2023"
+empresas = ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"] # ["EAC", "EBO", "EMG", "EMS", "EMT", "ENF", "EPB", "ERO", "ESE", "ESS", "ETO"]
+login = input("Digite o login: ")
+senha = pwinput.pwinput(prompt='Digite sua senha: ')
+data_inicial = input("Digite a data inicial (formato dd.mm.aaaa): ")
+data_final = input("Digite a data final (formato dd.mm.aaaa): ")
 
 for empresa in empresas:
     url = "https://webcorp.tww.com.br/energisa/" + empresa + "SACTK"
